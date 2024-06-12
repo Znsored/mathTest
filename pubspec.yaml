@@ -1,0 +1,28 @@
+name: math
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.2
+  flip_card: ^0.6.0
+  firebase_core: ^1.10.0
+  cloud_firestore: ^3.1.5
+  http: ^0.13.3
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/matchGame/chapter1.json
