@@ -160,7 +160,7 @@ class _MemoryGameState extends State<MemoryGame> {
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Image.asset("question_mark.png"),
+        child: Image.asset("assets/question_mark.png"),
       ),
     );
   }

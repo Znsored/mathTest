@@ -56,11 +56,11 @@ class Menu extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  buildChapterButton(context, 'C H A P T E R   1', 1, Colors.pinkAccent),
+                  buildChapterButton(context, 'C H A P T E R   1',1, 'Numbers',  Colors.white),
                   SizedBox(width: buttonSpacing),
-                  buildChapterButton(context, 'C H A P T E R   2', 2, Colors.green),
+                  buildChapterButton(context, 'C H A P T E R   2', 2,'Foundations',  Colors.white),
                   SizedBox(width: buttonSpacing),
-                  buildChapterButton(context, 'C H A P T E R   3', 3, Colors.orangeAccent),
+                  buildChapterButton(context, 'C H A P T E R   3', 3 ,'Shapes', Colors.white),
                 ],
               ),
               SizedBox(height: buttonSpacing), // Spacing between rows
@@ -68,9 +68,9 @@ class Menu extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  buildChapterButton(context, 'C H A P T E R   4', 4, Colors.deepPurpleAccent),
+                  buildChapterButton(context, 'C H A P T E R   4', 4,'Symbols',  Colors.white),
                   SizedBox(width: buttonSpacing),
-                  buildChapterButton(context, 'C H A P T E R   5', 5, Colors.redAccent),
+                  buildChapterButton(context, 'C H A P T E R   5',5, 'Geometry',  Colors.white),
                 ],
               ),
             ],
@@ -80,24 +80,59 @@ class Menu extends StatelessWidget {
     );
   }
 
-  Widget buildChapterButton(BuildContext context, String title, int chapterNumber, Color color) {
-    return Container(
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          minimumSize: Size(300, 120), // Adjust the button width as needed
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(150),
-            side: BorderSide(color: Colors.white, width: 10),
-          ),
+
+
+  Widget buildChapterButton(BuildContext context, String title,int chapterNumber, String chapterName, Color color) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/home',arguments:chapterNumber);
+      },
+      child: Container(
+        width: 300, // Set width for consistency
+        height: 120, // Set height for consistency
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey, width: 4), // Thicker gray border
+          borderRadius: BorderRadius.circular(150),
         ),
-        onPressed: () {
-          Navigator.pushNamed(context, '/home', arguments: chapterNumber);
-        },
-        child: Text(
-          title,
-          style: TextStyle(fontSize: 27),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: color,
+                minimumSize: Size(double.infinity, double.infinity), // Make button fill the container
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(150),
+                  side: BorderSide(color: Colors.transparent), // No internal border
+                ),
+              ),
+              onPressed: () {
+                Navigator.pushNamed(context, '/home',arguments:chapterNumber);
+              },
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(fontSize: 27, color: Colors.black),
+                    ),
+                    Text(
+                      chapterName,
+                      style: TextStyle(fontSize: 20, color: Colors.black),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
+
+
+
+
+
 }

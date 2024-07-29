@@ -126,7 +126,7 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
       body: Stack(
         children: [
           Image.asset(
-            '/Users/krishna/AndroidStudioProjects/minglemath/assets/study_material.png',
+            'assets/study_material.png',
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,

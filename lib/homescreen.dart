@@ -13,7 +13,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final chapter = ModalRoute.of(context)?.settings.arguments ?? 1;
+    final chapter = ModalRoute.of(context)?.settings.arguments as int? ??1;
 
     return Scaffold(
       appBar: AppBar(
