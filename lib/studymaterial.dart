@@ -1,4 +1,4 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'dart:ui';
 
 class StudyMaterialScreen extends StatefulWidget {
@@ -8,7 +8,7 @@ class StudyMaterialScreen extends StatefulWidget {
 
 class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
   late final PageController _pageController;
-  int currentPage = 0; 
+  int currentPage = 0;
 
   @override
   void initState() {
@@ -18,8 +18,7 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final int? chapter =
-    ModalRoute.of(context)?.settings.arguments as int?;
+    final int? chapter = ModalRoute.of(context)?.settings.arguments as int?;
 
     if (chapter == null) {
       return Scaffold(
@@ -59,30 +58,30 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
       ],
       // Chapter 2
       [
-      'Número','Adición', 'Resta', 'Multiplicación', 'División', 'Igual',
-      'Mayor que', 'Menor que', 'Más', 'Menos', 'Por','Dividido por',
-      'Suma', 'Diferencia', 'Producto', 'Cociente', 'Fracción',
-      'Decimal', 'Proporción', 'Ecuación'
+        'Número','Adición', 'Resta', 'Multiplicación', 'División', 'Igual',
+        'Mayor que', 'Menor que', 'Más', 'Menos', 'Por','Dividido por',
+        'Suma', 'Diferencia', 'Producto', 'Cociente', 'Fracción',
+        'Decimal', 'Proporción', 'Ecuación'
       ],
       // Chapter 3
       [
-      'Círculo', 'Triángulo', 'Cuadrado', 'Rectángulo', 'Rombus',
-    'Paralelogramo', 'Trapecio', 'Óvalo', 'Elipse', 'Esfera',
-    'Cubo', 'Cilindro', 'Cono', 'Prisma pentagonal', 'Prisma hexagonal',
-    'Pirámide', 'Cuboide', 'Prisma triangular', 'Hemisferio', 'Toro',
-    ],
+        'Círculo', 'Triángulo', 'Cuadrado', 'Rectángulo', 'Rombus',
+        'Paralelogramo', 'Trapecio', 'Óvalo', 'Elipse', 'Esfera',
+        'Cubo', 'Cilindro', 'Cono', 'Prisma pentagonal', 'Prisma hexagonal',
+        'Pirámide', 'Cuboide', 'Prisma triangular', 'Hemisferio', 'Toro',
+      ],
       // Chapter 4
-    [
-    'Más', 'Menos', 'Igual', 'Mayor que', 'Menor que', 'Por', 'Dividido por', 'Raíz cuadrada',
-    'Fracción', 'Porcentaje', 'Exponenciación', 'Sumatoria', 'Integral', 'Derivada', 'Infinito',
-      'No igual a', 'Mayor o igual que', 'Menor o igual que', 'Aproximadamente igual a', 'Límite',
-    ],
+      [
+        'Más', 'Menos', 'Igual', 'Mayor que', 'Menor que', 'Por', 'Dividido por', 'Raíz cuadrada',
+        'Fracción', 'Porcentaje', 'Exponenciación', 'Sumatoria', 'Integral', 'Derivada', 'Infinito',
+        'No igual a', 'Mayor o igual que', 'Menor o igual que', 'Aproximadamente igual a', 'Límite',
+      ],
       // Chapter 5
-    [
-    "Longitud", "Ancho", "Altura", "Diámetro", "Radio", "Perímetro", "Circunferencia", "Superficie",
-    "Volumen", "Ángulo", "Pendiente", "Intersección", "Simetría", "Perpendicular",
-    "Paralelo", "Coordenada", "Vértice", "Eje", "Hipotenusa", "Gradiente",
-    ],
+      [
+        "Longitud", "Ancho", "Altura", "Diámetro", "Radio", "Perímetro", "Circunferencia", "Superficie",
+        "Volumen", "Ángulo", "Pendiente", "Intersección", "Simetría", "Perpendicular",
+        "Paralelo", "Coordenada", "Vértice", "Eje", "Hipotenusa", "Gradiente",
+      ],
     ];
 
     List<List<String>> englishTranslations = [
@@ -95,25 +94,26 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
       ],
       // Chapter 2
       [
-      'Numbers','Addition', 'Subtraction', 'Multiplication', 'Division', 'Equal',
-      'Greater than', 'Less than', 'Plus', 'Minus', 'Times','Divided by',
-      'Sum', 'Difference', 'Product', 'Quotient', 'Fraction',
-      'Decimal', 'Ratio', 'Equation'
+        'Numbers','Addition', 'Subtraction', 'Multiplication', 'Division', 'Equal',
+        'Greater than', 'Less than', 'Plus', 'Minus', 'Times','Divided by',
+        'Sum', 'Difference', 'Product', 'Quotient', 'Fraction',
+        'Decimal', 'Ratio', 'Equation'
       ],
       // Chapter 3
       [
-      'Circle', 'Triangle', 'Square', 'Rectangle', 'Rhombus',
+        'Circle', 'Triangle', 'Square', 'Rectangle', 'Rhombus',
         'Parallelogram', 'Trapezium', 'Oval', 'Ellipse', 'Sphere',
         'Cube', 'Cylinder', 'Cone', 'Pentagonal prism', 'Hexagonal prism',
         'Pyramid', 'Cuboid', 'Triangular prism', 'Hemisphere', 'Torus',
-    ],
+      ],
       // Chapter 4
-    ['+', '-', '=', '>', '<', '×', '÷', '√', '/', '%', '^', '∑', '∫', 'd/dx', '∞', '≠', '≥', '≤', '≈', 'lim'],
+      ['+', '-', '=', '>', '<', '×', '÷', '√', '/', '%', '^', '∑', '∫', 'd/dx', '∞', '≠', '≥', '≤', '≈', 'lim'],
       // Chapter 5
-    ["Length", "Width", "Height", "Diameter", "Radius", "Perimeter", "Circumference",
-      "Area", "Volume", "Angle", "Slope", "Intersection", "Symmetry", "Perpendicular", "Parallel",
-      "Coordinate", "Vertex", "Axis", "Hypotenuse", "Gradient",
-    ],
+      [
+        "Length", "Width", "Height", "Diameter", "Radius", "Perimeter", "Circumference",
+        "Area", "Volume", "Angle", "Slope", "Intersection", "Symmetry", "Perpendicular", "Parallel",
+        "Coordinate", "Vertex", "Axis", "Hypotenuse", "Gradient",
+      ],
     ];
 
     return Scaffold(
@@ -155,6 +155,11 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
                     child: PageView.builder(
                       controller: _pageController,
                       itemCount: (spanishTranslations[chapter - 1].length / 10).ceil(),
+                      onPageChanged: (int page) {
+                        setState(() {
+                          currentPage = page;
+                        });
+                      },
                       itemBuilder: (context, index) {
                         return buildChapterContent(
                             chapter, index, spanishTranslations, englishTranslations);
@@ -163,15 +168,13 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
                   ),
                 ),
                 SizedBox(height: 20),
-                // Show only 'Next' button on the first page
                 if (currentPage == 0)
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      //primary: Colors.blue, // Background color
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0), // Increase border radius
+                        borderRadius: BorderRadius.circular(20.0),
                       ),
-                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15), // Add padding
+                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                     ),
                     onPressed: () {
                       _pageController.nextPage(
@@ -184,21 +187,19 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
                     },
                     child: Text(
                       'N E X T',
-                      style: TextStyle(fontSize: 25,color: Colors.blue), // Increase font size
+                      style: TextStyle(fontSize: 25, color: Colors.blue),
                     ),
                   ),
-                // Show 'Previous' and 'Exit' buttons on the last page
                 if (currentPage == (spanishTranslations[chapter - 1].length / 10 - 1))
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          //primary: Colors.blue, // Background color
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0), // Increase border radius
+                            borderRadius: BorderRadius.circular(20.0),
                           ),
-                          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15), // Add padding
+                          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                         ),
                         onPressed: () {
                           if (currentPage > 0) {
@@ -213,37 +214,33 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
                         },
                         child: Text(
                           'P R E V I O U S',
-                          style: TextStyle(fontSize: 25,color: Colors.blue), // Increase font size
+                          style: TextStyle(fontSize: 25, color: Colors.blue),
                         ),
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          //primary: Colors.red, // Background color
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0), // Increase border radius
+                            borderRadius: BorderRadius.circular(20.0),
                           ),
-                          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15), // Add padding
+                          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                         ),
                         onPressed: () {
-                          // Display the 'Exit' functionality
                           Navigator.pop(context);
                         },
                         child: Text(
                           'E X I T',
-                          style: TextStyle(fontSize: 25,color: Colors.red), // Increase font size
+                          style: TextStyle(fontSize: 25, color: Colors.red),
                         ),
                       ),
                     ],
                   ),
-                // Show 'Next' button on all pages except the first and last
                 if (currentPage > 0 && currentPage < (spanishTranslations[chapter - 1].length / 10 - 1))
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      //primary: Colors.blue, // Background color
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0), // Increase border radius
+                        borderRadius: BorderRadius.circular(20.0),
                       ),
-                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15), // Add padding
+                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                     ),
                     onPressed: () {
                       if (currentPage < (spanishTranslations[chapter - 1].length / 10 - 1)) {
@@ -258,7 +255,7 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
                     },
                     child: Text(
                       'Next',
-                      style: TextStyle(fontSize: 25), // Increase font size
+                      style: TextStyle(fontSize: 25),
                     ),
                   ),
               ],
@@ -280,52 +277,71 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 120, vertical: 80),
       decoration: BoxDecoration(
+        color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.white70.withOpacity(0.9),
-            spreadRadius: 2,
-            offset: Offset(0, 10),
+            color: Colors.black.withOpacity(0.1),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: Offset(0, 3),
           ),
         ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Table(
+          border: TableBorder.all(color: Colors.grey.shade300),
           children: [
-            // Display English translations on the left side
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center, // Center the text
+            TableRow(
+              decoration: BoxDecoration(color: Colors.blue.shade100),
+              children: [
+                TableCell(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'English',
+                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+                TableCell(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Spanish',
+                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            for (int i = 0; i < currentEnglishTranslations.length; i++)
+              TableRow(
                 children: [
-                  for (String translation in currentEnglishTranslations)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  TableCell(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        translation,
-                        style: TextStyle(fontSize: 27), // Increase font size
+                        currentEnglishTranslations[i],
+                        style: TextStyle(fontSize: 20),
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                ],
-              ),
-            ),
-            SizedBox(width: 20),
-            // Display Spanish translations on the right side
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center, // Center the text
-                children: [
-                  for (String translation in currentSpanishTranslations)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 4.0),
+                  ),
+                  TableCell(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        translation,
-                        style: TextStyle(fontSize: 27), // Increase font size
+                        currentSpanishTranslations[i],
+                        style: TextStyle(fontSize: 20),
+                        textAlign: TextAlign.center,
                       ),
                     ),
+                  ),
                 ],
               ),
-            ),
           ],
         ),
       ),
