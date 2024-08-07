@@ -13,7 +13,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final chapter = ModalRoute.of(context)?.settings.arguments as int? ??1;
+    final chapter = ModalRoute.of(context)?.settings.arguments as int? ?? 1;
 
     return Scaffold(
       appBar: AppBar(
@@ -32,6 +32,10 @@ class _MyHomePageState extends State<MyHomePage> {
             colors: [Colors.lightBlue, Colors.white],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
+          ),
+          image: DecorationImage(
+            image: AssetImage('assets/chapter_bcg.jpeg'),
+            fit: BoxFit.cover,
           ),
         ),
         child: Stack(
@@ -89,17 +93,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.pushNamed(context, '/studymaterial', arguments: chapter);
                     },
                     style: ElevatedButton.styleFrom(
-                      //primary: Colors.pink,
-                      //onPrimary: Colors.white,
                       minimumSize: Size(900, 100),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                      shape: StadiumBorder(
                         side: BorderSide(color: Colors.white, width: 10),
                       ),
                     ),
                     child: Text(
                       'unlock the Magic of Learning'.toUpperCase(),
-                      style: TextStyle(fontSize: 45,color: Colors.brown),
+                      style: TextStyle(fontSize: 45, color: Colors.brown),
                     ),
                   ),
                   SizedBox(height: 50),
@@ -108,17 +109,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.pushNamed(context, '/matching', arguments: chapter);
                     },
                     style: ElevatedButton.styleFrom(
-                      //primary: Colors.green,
-                      //onPrimary: Colors.white,
                       minimumSize: Size(900, 100),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                      shape: StadiumBorder(
                         side: BorderSide(color: Colors.white, width: 10),
                       ),
                     ),
                     child: Text(
                       'Jungle Matching Safari'.toUpperCase(),
-                      style: TextStyle(fontSize: 45,color: Colors.brown),
+                      style: TextStyle(fontSize: 45, color: Colors.brown),
                     ),
                   ),
                   SizedBox(height: 50),
@@ -127,17 +125,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.pushNamed(context, '/memory', arguments: chapter);
                     },
                     style: ElevatedButton.styleFrom(
-                      //primary: Colors.orange,
-                      //onPrimary: Colors.white,
                       minimumSize: Size(900, 100),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                      shape: StadiumBorder(
                         side: BorderSide(color: Colors.white, width: 10),
                       ),
                     ),
                     child: Text(
                       'Remember & Win'.toUpperCase(),
-                      style: TextStyle(fontSize: 45,color: Colors.brown),
+                      style: TextStyle(fontSize: 45, color: Colors.brown),
                     ),
                   ),
                 ],
@@ -148,4 +143,5 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
 }

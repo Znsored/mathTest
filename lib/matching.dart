@@ -43,7 +43,7 @@ class _MatchGameState extends State<MatchGame> {
 
   @override
   Widget build(BuildContext context) {
-    chapter = ModalRoute.of(context)?.settings.arguments as int?;
+    chapter = ModalRoute.of(context)?.settings.arguments as int? ??2;
 
     if (chapter == null) {
       return Scaffold(
