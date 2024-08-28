@@ -70,16 +70,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     buildGameCard(
                       context,
                       'Learn\n', // Force two lines
-                      'assets/memory_preview.png',
-                      'Learn new words and numbers, along with examples of how to pronounce them. Use your gained knowledge to win points in learning based games.',
+                      'assets/homescreen/level_1.png',
+                      'Learn new words and numbers. Use your gained knowledge to win points in learning based games.',
                       '/studymaterial',
                       chapter,
-                      50, // Example points
+                      20, // Example points
                     ),
                     buildGameCard(
                       context,
                       'Jungle Matching Safari\n', // Force two lines
-                      'assets/memory_preview.png',
+                      'assets/homescreen/level_2.png',
                       'Match and test your memory in the wild jungle themed drag and drop game.',
                       '/matching',
                       chapter,
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     buildGameCard(
                       context,
                       'Remember & Win\n', // Force two lines
-                      'assets/memory_preview.png',
+                      'assets/homescreen/level_3.png',
                       'Boost your memory with this exciting matching tile game and earn rewards.',
                       '/memory',
                       chapter,

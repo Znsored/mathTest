@@ -391,8 +391,8 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
                             );
                           },
                           child: buildFlashcard(
-                            translations["spanish"]?[index] ?? '',
                             translations["english"]?[index] ?? '',
+                            translations["spanish"]?[index] ?? '',
                           ),
                         );
                       },
