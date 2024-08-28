@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
 // import 'dart:ui';
-// import 'util.dart';  // Import the util.dart file
+// import 'util.dart';
 //
 // class StudyMaterialScreen extends StatefulWidget {
 //   @override
@@ -16,7 +16,7 @@
 //   @override
 //   void initState() {
 //     super.initState();
-//     _pageController = PageController();
+//     _pageController = PageController(viewportFraction: 0.3); // Smaller fraction for more cards
 //   }
 //
 //   @override
@@ -34,9 +34,8 @@
 //       );
 //     }
 //
-//     // Load translations only if they haven't been loaded yet
 //     if (isLoading) {
-//       loadTranslations(chapter);  // Convert chapter to string here
+//       loadTranslations(chapter);
 //     }
 //
 //     String getChapterTitle() {
@@ -107,9 +106,26 @@
 //                         });
 //                       },
 //                       itemBuilder: (context, index) {
-//                         return buildFlashcard(
-//                           translations["spanish"]?[index] ?? '',
-//                           translations["english"]?[index] ?? '',
+//                         return AnimatedBuilder(
+//                           animation: _pageController,
+//                           builder: (context, child) {
+//                             double value = 0.0;
+//                             if (_pageController.position.haveDimensions) {
+//                               value = _pageController.page! - index;
+//                               value = (1 - (value.abs() * 0.3)).clamp(0.0, 1.0);
+//                             }
+//                             return Transform.scale(
+//                               scale: value,
+//                               child: Opacity(
+//                                 opacity: value,
+//                                 child: child,
+//                               ),
+//                             );
+//                           },
+//                           child: buildFlashcard(
+//                             translations["spanish"]?[index] ?? '',
+//                             translations["english"]?[index] ?? '',
+//                           ),
 //                         );
 //                       },
 //                     ),
@@ -195,7 +211,7 @@
 //   Widget buildFlashcard(String spanish, String english) {
 //     return Center(
 //       child: Container(
-//         margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+//         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
 //         padding: EdgeInsets.all(20),
 //         decoration: BoxDecoration(
 //           color: Colors.white,
@@ -211,16 +227,31 @@
 //         ),
 //         child: Column(
 //           mainAxisSize: MainAxisSize.min,
+//           crossAxisAlignment: CrossAxisAlignment.start,  // Align text to the start
 //           children: [
-//             Text(
-//               english,
-//               style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 Expanded(
+//                   child: Text(
+//                     english,
+//                     style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+//                   ),
+//                 ),
+//                 IconButton(
+//                   icon: Icon(Icons.volume_up, size: 30, color: Colors.blue),
+//                   onPressed: () {
+//                     // Placeholder for audio playback functionality
+//                   },
+//                 ),
+//               ],
 //             ),
-//             SizedBox(height: 20),
+//             SizedBox(height: 10),
 //             Text(
 //               spanish,
 //               style: TextStyle(fontSize: 30, color: Colors.grey[600]),
 //             ),
+//             // Additional content can be added here if needed
 //           ],
 //         ),
 //       ),
@@ -230,6 +261,7 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'util.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class StudyMaterialScreen extends StatefulWidget {
   @override
@@ -241,11 +273,18 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
   int currentPage = 0;
   Map<String, List<String>> translations = {};
   bool isLoading = true;
+  final AudioPlayer _audioPlayer = AudioPlayer();  // Audio player instance
 
   @override
   void initState() {
     super.initState();
     _pageController = PageController(viewportFraction: 0.3); // Smaller fraction for more cards
+  }
+
+  @override
+  void dispose() {
+    _audioPlayer.dispose();  // Dispose the audio player
+    super.dispose();
   }
 
   @override
@@ -470,7 +509,9 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
                 IconButton(
                   icon: Icon(Icons.volume_up, size: 30, color: Colors.blue),
                   onPressed: () {
-                    // Placeholder for audio playback functionality
+                    _audioPlayer.play(
+                      AssetSource('audio/${english.toLowerCase()}.mp3'),  // Play the corresponding audio
+                    );
                   },
                 ),
               ],
@@ -480,7 +521,6 @@ class _StudyMaterialScreenState extends State<StudyMaterialScreen> {
               spanish,
               style: TextStyle(fontSize: 30, color: Colors.grey[600]),
             ),
-            // Additional content can be added here if needed
           ],
         ),
       ),

@@ -1,150 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'studymaterial.dart';
-// import 'matching.dart';
-// import 'memory.dart';
-//
-// class MyHomePage extends StatefulWidget {
-//   @override
-//   _MyHomePageState createState() => _MyHomePageState();
-// }
-//
-// class _MyHomePageState extends State<MyHomePage> {
-//   String userName = 'XYZ';
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     final chapter = ModalRoute.of(context)?.settings.arguments as int? ?? 1;
-//
-//     return Scaffold(
-//       appBar: AppBar(
-//         actions: [
-//           IconButton(
-//             icon: Icon(Icons.arrow_back),
-//             onPressed: () {
-//               Navigator.pop(context); // Navigate back to the main menu
-//             },
-//           ),
-//         ],
-//       ),
-//       body: Container(
-//         decoration: BoxDecoration(
-//           gradient: LinearGradient(
-//             colors: [Colors.lightBlue, Colors.white],
-//             begin: Alignment.topCenter,
-//             end: Alignment.bottomCenter,
-//           ),
-//           image: DecorationImage(
-//             image: AssetImage('assets/chapter_bcg.jpeg'),
-//             fit: BoxFit.cover,
-//           ),
-//         ),
-//         child: Stack(
-//           children: [
-//             Positioned(
-//               top: 0,
-//               left: 0,
-//               right: 0,
-//               height: MediaQuery.of(context).size.height * 0.25,
-//               child: Container(
-//                 decoration: BoxDecoration(
-//                   color: Colors.white,
-//                 ),
-//                 child: Column(
-//                   mainAxisAlignment: MainAxisAlignment.center,
-//                   children: [
-//                     CircleAvatar(
-//                       radius: 80,
-//                       backgroundImage: AssetImage('assets/NoPic.png'),
-//                     ),
-//                     SizedBox(height: 25),
-//                     Text(
-//                       'Welcome $userName',
-//                       style: TextStyle(
-//                         fontSize: 40,
-//                         fontWeight: FontWeight.bold,
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//             ),
-//             Positioned(
-//               top: 300,
-//               left: 0,
-//               right: 0,
-//               child: Align(
-//                 alignment: Alignment.center,
-//                 child: Text(
-//                   'C H A P T E R   $chapter   M E N U ',
-//                   style: TextStyle(fontSize: 50),
-//                 ),
-//               ),
-//             ),
-//             Positioned(
-//               top: MediaQuery.of(context).size.height * 0.25,
-//               left: 0,
-//               right: 0,
-//               height: MediaQuery.of(context).size.height * 0.75,
-//               child: Column(
-//                 mainAxisAlignment: MainAxisAlignment.center,
-//                 children: [
-//                   ElevatedButton(
-//                     onPressed: () {
-//                       Navigator.pushNamed(context, '/studymaterial', arguments: chapter);
-//                     },
-//                     style: ElevatedButton.styleFrom(
-//                       minimumSize: Size(900, 100),
-//                       shape: StadiumBorder(
-//                         side: BorderSide(color: Colors.white, width: 10),
-//                       ),
-//                     ),
-//                     child: Text(
-//                       'unlock the Magic of Learning'.toUpperCase(),
-//                       style: TextStyle(fontSize: 45, color: Colors.brown),
-//                     ),
-//                   ),
-//                   SizedBox(height: 50),
-//                   ElevatedButton(
-//                     onPressed: () {
-//                       Navigator.pushNamed(context, '/matching', arguments: chapter);
-//                     },
-//                     style: ElevatedButton.styleFrom(
-//                       minimumSize: Size(900, 100),
-//                       shape: StadiumBorder(
-//                         side: BorderSide(color: Colors.white, width: 10),
-//                       ),
-//                     ),
-//                     child: Text(
-//                       'Jungle Matching Safari'.toUpperCase(),
-//                       style: TextStyle(fontSize: 45, color: Colors.brown),
-//                     ),
-//                   ),
-//                   SizedBox(height: 50),
-//                   ElevatedButton(
-//                     onPressed: () {
-//                       Navigator.pushNamed(context, '/memory', arguments: chapter);
-//                     },
-//                     style: ElevatedButton.styleFrom(
-//                       minimumSize: Size(900, 100),
-//                       shape: StadiumBorder(
-//                         side: BorderSide(color: Colors.white, width: 10),
-//                       ),
-//                     ),
-//                     child: Text(
-//                       'Remember & Win'.toUpperCase(),
-//                       style: TextStyle(fontSize: 45, color: Colors.brown),
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-//
-// }
 import 'package:flutter/material.dart';
 import 'studymaterial.dart';
 import 'matching.dart';
@@ -174,87 +27,164 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: Container(
+        width: MediaQuery.of(context).size.width,  // Full screen width
+        height: MediaQuery.of(context).size.height,  // Full screen height
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.lightBlue, Colors.white],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
-          image: DecorationImage(
-            image: AssetImage('assets/chapter_bcg.jpeg'),
-            fit: BoxFit.cover,
-          ),
         ),
         child: Column(
           children: [
-            // Top section with avatar and welcome text
-            Container(
-              height: MediaQuery.of(context).size.height * 0.3, // Adjust height to fit screen
-              decoration: BoxDecoration(
-                color: Colors.white,
-              ),
+            // Top section with user icon and welcome text
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CircleAvatar(
-                    radius: 60,  // Adjusted radius
+                    radius: 50,
                     backgroundImage: AssetImage('assets/NoPic.png'),
                   ),
-                  SizedBox(height: 15),  // Adjusted spacing
+                  SizedBox(height: 10),
                   Text(
                     'Welcome $userName',
                     style: TextStyle(
-                      fontSize: 30,  // Adjusted font size
+                      fontSize: 24,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                 ],
               ),
             ),
 
-            // Middle section with chapter title
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Text(
-                'C H A P T E R   $chapter   M E N U ',
-                style: TextStyle(fontSize: 30),  // Adjusted font size
-              ),
-            ),
-
-            // Bottom section with buttons
+            // Cards section with horizontal scroll
             Expanded(
-              child: Padding(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                child: Row(
                   children: [
-                    buildMenuButton(context, 'unlock the Magic of Learning', '/studymaterial', chapter),
-                    buildMenuButton(context, 'Jungle Matching Safari', '/matching', chapter),
-                    buildMenuButton(context, 'Remember & Win', '/memory', chapter),
+                    buildGameCard(
+                      context,
+                      'Learn\n', // Force two lines
+                      'assets/memory_preview.png',
+                      'Learn new words and numbers, along with examples of how to pronounce them. Use your gained knowledge to win points in learning based games.',
+                      '/studymaterial',
+                      chapter,
+                      50, // Example points
+                    ),
+                    buildGameCard(
+                      context,
+                      'Jungle Matching Safari\n', // Force two lines
+                      'assets/memory_preview.png',
+                      'Match and test your memory in the wild jungle themed drag and drop game.',
+                      '/matching',
+                      chapter,
+                      30, // Example points
+                    ),
+                    buildGameCard(
+                      context,
+                      'Remember & Win\n', // Force two lines
+                      'assets/memory_preview.png',
+                      'Boost your memory with this exciting matching tile game and earn rewards.',
+                      '/memory',
+                      chapter,
+                      40, // Example points
+                    ),
                   ],
                 ),
               ),
             ),
+
+            // Add a SizedBox or Padding to create space between cards and bottom of the screen
+            SizedBox(height: 20),
           ],
         ),
       ),
     );
   }
 
-  Widget buildMenuButton(BuildContext context, String text, String route, int chapter) {
-    return ElevatedButton(
-      onPressed: () {
+  Widget buildGameCard(BuildContext context, String title, String imagePath, String description, String route, int chapter, int points) {
+    return GestureDetector(
+      onTap: () {
         Navigator.pushNamed(context, route, arguments: chapter);
       },
-      style: ElevatedButton.styleFrom(
-        minimumSize: Size(double.infinity, 70),  // Adjusted height
-        shape: StadiumBorder(
-          side: BorderSide(color: Colors.white, width: 5),  // Adjusted border width
+      child: Container(
+        width: 250,  // Set a fixed width for each card
+        margin: EdgeInsets.symmetric(horizontal: 10.0),
+        child: Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+          elevation: 4,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(  // Center the heading text horizontally
+                  child: Text(
+                    title,
+                    maxLines: 2, // Ensure the text takes up 2 lines
+                    overflow: TextOverflow.ellipsis, // Ellipsis if content is too long
+                    textAlign: TextAlign.center,  // Center the text
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
+                Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Image.asset(
+                        imagePath,
+                        width: double.infinity,
+                        height: 150,
+                        fit: BoxFit.cover,  // Make the image fit completely
+                      ),
+                    ),
+                    Positioned(
+                      top: 8,
+                      right: 8,
+                      child: Icon(Icons.star, color: Colors.yellow[700]),
+                    ),
+                    Positioned(
+                      top: 8,
+                      right: 40,
+                      child: Text(
+                        '$points pts',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          shadows: [
+                            Shadow(
+                              offset: Offset(1.0, 1.0),
+                              blurRadius: 3.0,
+                              color: Colors.black,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10),
+                Text(
+                  description,
+                  textAlign: TextAlign.justify,  // Justify the text
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
-      ),
-      child: Text(
-        text.toUpperCase(),
-        style: TextStyle(fontSize: 20, color: Colors.brown),  // Adjusted font size
       ),
     );
   }
