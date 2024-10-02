@@ -27,10 +27,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -44,38 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB1eNTDiK6vfNxd9XnjVrxQ_OQHgPZ4h-0',
-    appId: '1:492732949895:web:4d8cf3ba0ab03aaa4a5f22',
-    messagingSenderId: '492732949895',
-    projectId: 'minglemath-db',
-    authDomain: 'minglemath-db.firebaseapp.com',
-    storageBucket: 'minglemath-db.appspot.com',
-    measurementId: 'G-50B371JZGS',
+    apiKey: 'AIzaSyAD34kPzVEurweXJFrn5PTdqUmHFS_T6_U',
+    appId: '1:982533764740:web:19b5f88b3872aac970f4d1',
+    messagingSenderId: '982533764740',
+    projectId: 'fih-test-ce7f0',
+    authDomain: 'fih-test-ce7f0.firebaseapp.com',
+    storageBucket: 'fih-test-ce7f0.appspot.com',
+    measurementId: 'G-4WRH2W28QB',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCw8DZ7gtc__a-mlsYamWQdAnxxlmeEch8',
-    appId: '1:492732949895:android:54b2d5fe12f5dea44a5f22',
-    messagingSenderId: '492732949895',
-    projectId: 'minglemath-db',
-    storageBucket: 'minglemath-db.appspot.com',
+    apiKey: 'AIzaSyC--sxrC6FCCL7UyCIEgQwOIXAq2s_NJL8',
+    appId: '1:982533764740:android:67fe61549b4caab070f4d1',
+    messagingSenderId: '982533764740',
+    projectId: 'fih-test-ce7f0',
+    storageBucket: 'fih-test-ce7f0.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCQFHXuWFr0aq2rZyNpMZjyB65yhZp2FNM',
-    appId: '1:492732949895:ios:49c01b4d4edd861c4a5f22',
-    messagingSenderId: '492732949895',
-    projectId: 'minglemath-db',
-    storageBucket: 'minglemath-db.appspot.com',
-    iosBundleId: 'com.example.minglemath',
+    apiKey: 'AIzaSyA6EZpG5_idusCmFaS2IqcH0yxRjtOC0YY',
+    appId: '1:982533764740:ios:fa32679d1d6e8c8b70f4d1',
+    messagingSenderId: '982533764740',
+    projectId: 'fih-test-ce7f0',
+    storageBucket: 'fih-test-ce7f0.appspot.com',
+    iosBundleId: 'com.example.math',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCQFHXuWFr0aq2rZyNpMZjyB65yhZp2FNM',
-    appId: '1:492732949895:ios:5f2db58ca03a9fc64a5f22',
-    messagingSenderId: '492732949895',
-    projectId: 'minglemath-db',
-    storageBucket: 'minglemath-db.appspot.com',
-    iosBundleId: 'com.example.minglemath.RunnerTests',
+    apiKey: 'AIzaSyA6EZpG5_idusCmFaS2IqcH0yxRjtOC0YY',
+    appId: '1:982533764740:ios:fa32679d1d6e8c8b70f4d1',
+    messagingSenderId: '982533764740',
+    projectId: 'fih-test-ce7f0',
+    storageBucket: 'fih-test-ce7f0.appspot.com',
+    iosBundleId: 'com.example.math',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyAD34kPzVEurweXJFrn5PTdqUmHFS_T6_U',
+    appId: '1:982533764740:web:c9ecd645f5c8fc1570f4d1',
+    messagingSenderId: '982533764740',
+    projectId: 'fih-test-ce7f0',
+    authDomain: 'fih-test-ce7f0.firebaseapp.com',
+    storageBucket: 'fih-test-ce7f0.appspot.com',
+    measurementId: 'G-NMLWQT260R',
+  );
+
 }
