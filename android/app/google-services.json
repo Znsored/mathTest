@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "48987067227",
+    "project_id": "fih-test-c8ebd",
+    "storage_bucket": "fih-test-c8ebd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48987067227:android:592fd9d13bdc4b5159807e",
+        "android_client_info": {
+          "package_name": "com.example.math"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPSZvF8-fKSet_41aFDQkQYYDyNRvW3d4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
